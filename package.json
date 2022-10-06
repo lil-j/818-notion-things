@@ -9,11 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@geist-ui/core": "^2.3.8",
     "@notionhq/client": "^2.2.0",
+    "@radix-ui/react-dialog": "^1.0.0",
+    "@radix-ui/react-icons": "^1.1.1",
+    "@radix-ui/react-popover": "1.0.0",
+    "@stitches/react": "^1.2.8",
     "dotenv": "^16.0.2",
+    "framer-motion": "^7.3.6",
     "next": "12.3.0",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.9",
