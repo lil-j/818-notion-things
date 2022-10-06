@@ -61,7 +61,7 @@ export default async function handler(req, res) {
                         page_id: person.id,
                         properties: {
                             ["Owed to " + body.purchaser.name]: {
-                                number: person.properties["Owed to " + body.purchaser.name].number + (body.total_cost / body.indebted.length)
+                                number: person.properties["Owed to " + body.purchaser.name].number + (body.total_cost / (body.indebted.length + 1))
                             }
                         }
                     })
