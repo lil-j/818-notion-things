@@ -90,7 +90,7 @@ export default function Pay() {
         }
 
         return <motion.div
-                className="z-40 h-screen w-screen fixed bg-black/80 z-0 overflow-hidden flex items-center justify-center"
+                className="z-40 h-screen w-screen fixed bg-black/80 overflow-hidden flex items-center justify-center"
             >
                 <div
                     className="max-w-lg w-full bg-white shadow-lg fixed z-10"
