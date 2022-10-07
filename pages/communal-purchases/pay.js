@@ -2,7 +2,6 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import toast from "react-hot-toast";
-import { useDetectClickOutside } from 'react-detect-click-outside';
 
 export default function Pay() {
     // Data
