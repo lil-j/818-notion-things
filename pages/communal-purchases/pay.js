@@ -82,8 +82,9 @@ export default function Pay() {
             toast.success("Thank you for certifying! Payment complete.")
         }
 
+
         return <motion.div
-                className="z-30 h-screen w-screen fixed bg-black/80 z-0 overflow-hidden flex items-center justify-center"
+                className="z-40 h-screen w-screen fixed bg-black/80 z-0 overflow-hidden flex items-center justify-center"
             >
                 <motion.div
                     className="max-w-lg w-full bg-white shadow-lg fixed z-10">
@@ -151,7 +152,7 @@ export default function Pay() {
                                 <h3>👋 Hi, {whoBought}!</h3> <h4>Here's a breakdown of your balances:</h4>
                                 {
                                     data[whoBought].balance.map((person) => (
-                                        <div className="w-full bg-blue-100 px-4 py-3 rounded-2xl mb-2 relative z-10">
+                                        <div className="w-full bg-blue-100 px-4 py-3 rounded-2xl mb-2 relative z-0">
                                             {
                                                 person.amount >! 0 && <button onClick={(e) => initiateReimbursement(e, person)} className="absolute right-4 bottom-4 absolute uppercase border-solid border-2 border-black p-1 rounded hover:bg-black active:opacity-70 hover:text-white transition-all">Pay Back -></button>
                                             }
