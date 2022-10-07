@@ -2,6 +2,7 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import toast from "react-hot-toast";
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 export default function Pay() {
     // Data
@@ -22,6 +23,7 @@ export default function Pay() {
     const [certifyLoading, setCertifyLoading] = useState()
 
     function initiateReimbursement(e, person) {
+        console.log("in")
         e.preventDefault()
         setModal(true)
         setVenmoOpen(false)
@@ -81,13 +83,20 @@ export default function Pay() {
             await setContributors(Object.entries(updatedData).map(entry => [entry[0], true, entry[1].peopleProperties]))
             toast.success("Thank you for certifying! Payment complete.")
         }
-
+        const closeModal = () => {
+            console.log("close")
+            if (modal) {
+                setModal(false);
+            }
+        }
 
         return <motion.div
                 className="z-40 h-screen w-screen fixed bg-black/80 z-0 overflow-hidden flex items-center justify-center"
             >
-                <motion.div
-                    className="max-w-lg w-full bg-white shadow-lg fixed z-10">
+                <div
+                    className="max-w-lg w-full bg-white shadow-lg fixed z-10"
+                >
+                    <a className="absolute right-5 hover:underline top-2" onClick={() => setModal(!modal)}>Cancel</a>
                     <div className="h-36 w-full bg-blue-100 flex items-center justify-center">
                         <img className="m-auto w-24 h-24 object-cover rounded-[100%] border border-solid border-white border-4" src={data[userToPay.name].peopleProperties.avatar_url}/>
                     </div>
@@ -103,7 +112,7 @@ export default function Pay() {
                         <p className="text-xs text-center">You must pay {userToPay.name} back in full.</p>
 
                     </div>
-                </motion.div>
+                </div>
             </motion.div>
     }
 
