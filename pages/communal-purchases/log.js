@@ -88,7 +88,7 @@ export default function Log() {
         return await res.json()
     }
 
-    return <div className="max-w-md mx-auto mt-8">
+    return <div className="px-5 lg:px-0 max-w-md mx-auto mt-8">
         <Link href="/communal-purchases/pay"><a className="hover:underline">Pay Someone Back Instead -></a></Link>
         <h1>Log a Transaction</h1>
         { data ?

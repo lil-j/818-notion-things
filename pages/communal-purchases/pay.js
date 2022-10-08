@@ -135,7 +135,7 @@ export default function Pay() {
                 <PayBackModal/>
             </AnimatePresence>
         }
-        <div className="pt-8 max-w-md mx-auto">
+        <div className="px-5 lg:px-0 pt-8 max-w-md mx-auto">
             <Link href="/communal-purchases/log"><a className="hover:underline">Log a Transaction Instead -></a></Link>
             <h1>Pay Someone Back</h1>
             { data ?
