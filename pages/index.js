@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from "next/link";
 
 export default function Home() {
@@ -9,7 +7,7 @@ export default function Home() {
             <h2 className="leading-tight">What are you looking for?</h2>
             <hr/>
             <main className="block">
-                <Link href="/communal-purchases/log">
+                <Link href="/notion/communal-purchases">
                     <h3 className="mt-12 text-blue-700 hover:underline hover:cursor-pointer">Communal Purchases</h3>
                 </Link>
                 <div>

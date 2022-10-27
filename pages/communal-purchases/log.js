@@ -1,9 +1,8 @@
 import Link from "next/link";
-import {motion, useMotionValue, useScroll, useSpring} from "framer-motion";
 import {useEffect, useState} from "react";
 import {colors} from "../../util/Colors";
 
-export default function Log() {
+export default function Log({hideBack}) {
     // Data
     const [data, setData] = useState()
 
@@ -90,7 +89,12 @@ export default function Log() {
 
     return <div className="lg:px-0 max-w-md mx-auto mt-8">
         <div className="mx-5">
-            <Link href="/communal-purchases/pay"><a className="hover:underline">Pay Someone Back Instead -></a></Link>
+            {
+                !hideBack &&
+                <Link href="/communal-purchases/pay"><a className="hover:underline">Pay Someone Back Instead
+                    -></a></Link>
+
+            }
             <h1 className="leading-tight">Log a Transaction</h1>
         </div>
 

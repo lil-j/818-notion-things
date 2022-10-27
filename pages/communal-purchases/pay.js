@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import toast from "react-hot-toast";
 
-export default function Pay() {
+export default function Pay({hideBack}) {
     // Data
     const [data, setData] = useState()
 
@@ -136,13 +136,16 @@ export default function Pay() {
             </AnimatePresence>
         }
         <div className="px-5 lg:px-0 pt-8 max-w-md mx-auto">
-            <Link href="/communal-purchases/log"><a className="hover:underline">Log a Transaction Instead -></a></Link>
+            {!hideBack &&
+                <Link href="/communal-purchases/log"><a className="hover:underline">Log a Transaction Instead
+                    -></a></Link>}
             <h1 className="leading-tight">Pay Someone Back</h1>
-            { data ?
+            {data ?
                 <form className="mb-4">
                     <div className="grid gap-6 mb-6 md:grid-cols-2">
                         <div className="col-span-2">
-                            <label htmlFor="purchaser" className="block mb-2 text-sm font-medium text-gray-900">Who are you?</label>
+                            <label htmlFor="purchaser" className="block mb-2 text-sm font-medium text-gray-900">Who are
+                                you?</label>
                             <select id="purchaser"
                                     value={whoBought}
                                     onChange={(e) => setWhoBought(e.target.value)}
