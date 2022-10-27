@@ -88,18 +88,21 @@ export default function Log() {
         return await res.json()
     }
 
-    return <div className="px-5 lg:px-0 max-w-md mx-auto mt-8">
-        <Link href="/communal-purchases/pay"><a className="hover:underline">Pay Someone Back Instead -></a></Link>
-        <h1>Log a Transaction</h1>
+    return <div className="lg:px-0 max-w-md mx-auto mt-8">
+        <div className="mx-5">
+            <Link href="/communal-purchases/pay"><a className="hover:underline">Pay Someone Back Instead -></a></Link>
+            <h1 className="leading-tight">Log a Transaction</h1>
+        </div>
+
         { data ?
-        <form className="mb-4">
+        <form className="mx-5 mb-4">
             <div className="grid gap-6 mb-6 md:grid-cols-2">
                 <div className="col-span-2">
                     <label htmlFor="purchaser" className="block mb-2 text-sm font-medium text-gray-900">Who bought it</label>
                     <select id="purchaser"
                             value={whoBought}
                             onChange={(e) => setWhoBought(e.target.value)}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                         {
                             Object.entries(data).map((entry) => (
                                 <option value={entry[0]}>{entry[0]}</option>
@@ -137,13 +140,14 @@ export default function Log() {
                         </div>
                     </div>
                 }
-
+            </div>
+            <div className="grid grid-cols-2">
                 <div>
                     <label htmlFor="transaction_name"
                            className="block mb-2 text-sm font-medium text-gray-900">Transaction
                         Name</label>
                     <input type="text" id="transaction_name"
-                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                            placeholder="A gallon of eggs"
                            value={transactionName}
                            onChange={(e) => setTransactionName(e.target.value)}
@@ -153,13 +157,14 @@ export default function Log() {
                     <label htmlFor="cost"
                            className="block mb-2 text-sm font-medium text-gray-900">Cost (USD)</label>
                     <input type="number" id="cost"
-                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                            placeholder="45"
                            value={cost}
                            onChange={(e) => setCost(e.target.value)}
                            required/>
                 </div>
             </div>
+
             <div className="flex items-start mb-6">
                 <div className="flex items-center h-5">
                     <input id="promise" type="checkbox" value=""

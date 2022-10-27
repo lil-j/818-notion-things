@@ -137,7 +137,7 @@ export default function Pay() {
         }
         <div className="px-5 lg:px-0 pt-8 max-w-md mx-auto">
             <Link href="/communal-purchases/log"><a className="hover:underline">Log a Transaction Instead -></a></Link>
-            <h1>Pay Someone Back</h1>
+            <h1 className="leading-tight">Pay Someone Back</h1>
             { data ?
                 <form className="mb-4">
                     <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -146,7 +146,7 @@ export default function Pay() {
                             <select id="purchaser"
                                     value={whoBought}
                                     onChange={(e) => setWhoBought(e.target.value)}
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[90%] p-2.5">
                                 <option value=""></option>
                                 {
                                     Object.entries(data).map((entry) => (
@@ -160,7 +160,7 @@ export default function Pay() {
                                 <h3>👋 Hi, {whoBought}!</h3> <h4>Here's a breakdown of your balances:</h4>
                                 {
                                     data[whoBought].balance.map((person) => (
-                                        <div className="w-full bg-blue-100 px-4 py-3 rounded-2xl mb-2 relative z-0">
+                                        <div className="bg-blue-100 px-4 py-3 rounded-2xl mb-2 relative z-0">
                                             {
                                                 person.amount >! 0 && <button onClick={(e) => initiateReimbursement(e, person)} className="absolute right-4 bottom-4 absolute uppercase border-solid border-2 border-black p-1 rounded hover:bg-black active:opacity-70 hover:text-white transition-all">Pay Back -></button>
                                             }
