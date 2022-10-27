@@ -1,8 +1,7 @@
 import notion from "../../util/NotionClient";
 
-const housemateDatabase = "6331a9e194d146098371520964963c71";
-const statementLogDatabase = "e2eace692fee4bb0b9bad935cca2e642";
-const transactionLogDatabase = "36a32aec38574dca8eb4c076b836272e";
+const statementLogDatabase = "9958362fb6b549a091207b30cf60ecd3";
+const transactionLogDatabase = "c5f1bafcd6694020bab6f5f6ae4e0e8a";
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
