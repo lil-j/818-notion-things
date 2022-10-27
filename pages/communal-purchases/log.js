@@ -165,7 +165,7 @@ export default function Log() {
                 </div>
             </div>
 
-            <div className="flex items-start mb-6">
+            <div className="flex items-start mb-6 mt-3">
                 <div className="flex items-center h-5">
                     <input id="promise" type="checkbox" value=""
                            checked={confirmation}

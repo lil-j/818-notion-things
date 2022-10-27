@@ -31,7 +31,7 @@ export default async function handler(req, res) {
                             }
                         ]
                 },
-                "Total Cost": {
+                "Total Price": {
                     number: body.total_cost
                 },
                 "Indebted": {
