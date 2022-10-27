@@ -18,7 +18,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div>
-                    <Link href="/commmnal-purchases/pay">
+                    <Link href="/communal-purchases/pay">
                         <a className="hover:underline">Pay someone back</a>
                     </Link>
                 </div>
