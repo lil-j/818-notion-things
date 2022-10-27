@@ -3,7 +3,7 @@ import Pay from "../communal-purchases/pay";
 
 export default function CommunalPurchases() {
     return <div className="grid grid-cols-2">
-        <Log/>
-        <Pay/>
+        <Log hideBack/>
+        <Pay hideBack/>
     </div>
 }
