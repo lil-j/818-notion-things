@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence} from "framer-motion";
 import toast from "react-hot-toast";
 
 export default function Pay({hideBack}) {
@@ -89,21 +89,19 @@ export default function Pay({hideBack}) {
             }
         }
 
-        return <motion.div
-                className="z-40 h-screen w-screen fixed bg-black/80 overflow-hidden flex items-center justify-center"
-            >
-                <div
-                    className="max-w-lg w-full bg-white shadow-lg fixed z-10"
-                >
-                    <a className="absolute right-5 hover:underline top-2" onClick={() => setModal(!modal)}>Cancel</a>
-                    <div className="h-36 w-full bg-blue-100 flex items-center justify-center">
-                        <img className="m-auto w-24 h-24 object-cover rounded-[100%] border border-solid border-white border-4" src={data[userToPay.name].peopleProperties.avatar_url}/>
-                    </div>
-                    <div className="mt-3 px-4 justify-center">
-                        <h4 className="text-center">Pay {userToPay.name} Back</h4>
-                        <h5 className="text-center">You Owe: <span className="text-blue-500">${userToPay.amount}</span></h5>
-                        <div className="flex justify-center">
-                            {
+        return <div
+            className="h-screen w-full bg-white shadow-lg z-10"
+        >
+            <a className="absolute right-5 hover:underline top-2" onClick={() => setModal(!modal)}>Cancel</a>
+            <div className="h-36 w-full bg-blue-100 flex items-center justify-center">
+                <img className="m-auto w-24 h-24 object-cover rounded-[100%] border border-solid border-white border-4"
+                     src={data[userToPay.name].peopleProperties.avatar_url}/>
+            </div>
+            <div className="mt-3 px-4 justify-center">
+                <h4 className="text-center">Pay {userToPay.name} Back</h4>
+                <h5 className="text-center">You Owe: <span className="text-blue-500">${userToPay.amount}</span></h5>
+                <div className="flex justify-center">
+                    {
                                 !venmoOpen ? <button onClick={pay} className="bg-blue-600 text-white px-3 py-2 rounded-lg font-semibold">Pay on Venmo</button> : <button onClick={certify} className="bg-black text-white px-3 py-2 rounded-lg font-semibold">{!certifyLoading ? "I certify that I paid" : "Loading"}</button>
 
                             }
@@ -112,7 +110,6 @@ export default function Pay({hideBack}) {
 
                     </div>
                 </div>
-            </motion.div>
     }
 
 
